@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Policy Validator</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>
+</head>
+<body>
+
+<button class="check-backend-btn" onclick="checkBackendStatus()">Check Backend</button>
+<div id="statusPopup" class="status-popup"></div>
+
+<div class="home-wrapper">
+
+    <h1 class="home-title">Vehicle & Policy Validator</h1>
+    <p class="home-subtitle">Choose how you want to provide your data</p>
+
+    <div class="home-options">
+
+        <div class="home-card" onclick="location.href='manual_form.html'">
+            <img src="https://cdn-icons-png.flaticon.com/512/3031/3031701.png" class="home-icon">
+            <h2>Manual Entry</h2>
+            <p>Fill in details manually using the structured form.</p>
+        </div>
+
+        <div class="home-card" onclick="location.href='excel_upload.html'">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" class="home-icon">
+            <h2>Upload Excel</h2>
+            <p>Upload your Excel file and validate automatically.</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

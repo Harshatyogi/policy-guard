@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Entry</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>
+</head>
+<body>
+
+<!-- Backend Check -->
+<button class="check-backend-btn" onclick="checkBackendStatus()">Check Backend</button>
+<div id="statusPopup" class="status-popup"></div>
+
+<div class="form-page">
+
+    <h1 class="page-title">Manual Data Entry</h1>
+
+    <form id="manualForm" class="card-form">
+
+        <!-- ---------------- VEHICLE INFO ---------------- -->
+        <div class="form-section">
+            <h2 class="section-title">🚗 Vehicle Information</h2>
+
+            <div class="grid-2">
+                <div>
+                    <label>CHASSIS NO</label>
+                    <input type="text" name="CHASSIS NO">
+                </div>
+
+                <div>
+                    <label>ENGINE NUMBER</label>
+                    <input type="text" name="ENGINE NUMBER">
+                </div>
+
+                <div>
+                    <label>PLATE NO</label>
+                    <input type="text" name="PLATE NO">
+                </div>
+
+                <div>
+                    <label>REGISTRATION YEAR</label>
+                    <input type="number" name="REGISTRATION YEAR">
+                </div>
+
+                <div>
+                    <label>MANUFACTURE YEAR</label>
+                    <input type="number" name="MANUFACTURE YEAR">
+                </div>
+
+                <div>
+                    <label>VEHICLE AGE</label>
+                    <input type="number" name="VEHICLE AGE">
+                </div>
+
+                <div>
+                    <label>SEATING CAPACITY</label>
+                    <input type="number" name="SEATING CAPACITY">
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------- POLICY INFO ---------------- -->
+        <div class="form-section">
+            <h2 class="section-title">📄 Policy Information</h2>
+
+            <div class="grid-2">
+                <div>
+                    <label>POLICYTYPE</label>
+                    <input type="text" name="POLICYTYPE">
+                </div>
+
+                <div>
+                    <label>SUMINSURED</label>
+                    <input type="number" name="SUMINSURED">
+                </div>
+
+                <div>
+                    <label>CLAIMYN (Yes/No)</label>
+                    <input type="text" name="CLAIMYN">
+                </div>
+
+                <div>
+                    <label>NO OF CLAIMS</label>
+                    <input type="number" name="NO OF CLAIMS">
+                </div>
+
+                <div>
+                    <label>NO CLAIM BONUS</label>
+                    <input type="number" name="NO CLAIM BONUS">
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------- USAGE RISK INFO ---------------- -->
+        <div class="form-section">
+            <h2 class="section-title">⚠️ Usage / Risk Factors</h2>
+
+            <div class="grid-2">
+                <div>
+                    <label>IS COMMERCIAL YN (Yes/No)</label>
+                    <input type="text" name="ISCOMMERCIAL YN">
+                </div>
+
+                <div>
+                    <label>DRIVER LICENSE</label>
+                    <input type="text" name="DRIVER LICENSE">
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="primary-btn-full" onclick="submitManual()">Validate</button>
+    </form>
+
+    <pre id="result" class="result-box"></pre>
+
+</div>
+
+</body>
+</html>

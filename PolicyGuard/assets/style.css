@@ -1,0 +1,355 @@
+/* -------- HOMEPAGE -------- */
+
+body {
+    font-family: Poppins, Arial;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #dbeafe, #f1f5f9);
+}
+
+.home-wrapper {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.home-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    gap: 50px;         /* space between left + right input */
+    margin-bottom: px;  /* space between rows */
+}
+
+.section-box {
+    padding: 25px;
+    border-radius: 12px;
+    background: #ffffff;
+    margin-bottom: 35px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.home-subtitle {
+    font-size: 18px;
+    color: #475569;
+    margin-bottom: 40px;
+}
+
+/* Card options container */
+.home-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Cards */
+.home-card {
+    width: 260px;
+    padding: 25px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.home-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Icon */
+.home-icon {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+/* Title inside card */
+.home-card h2 {
+    font-size: 22px;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.home-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+    body {
+    font-family: Poppins, Arial;
+    background: #eef2f3;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Wrapper */
+.form-page {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Cards / Sections */
+.card-form {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fafafa;
+    border-left: 6px solid #4e54c8;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Grid Layout */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;   /* horizontal gap between left & right boxes */
+    row-gap: 25px;      /* vertical spacing */
+}
+
+
+/* Inputs */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 90%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #4e54c8;
+    box-shadow: 0px 0px 6px rgba(78,84,200,0.3);
+}
+
+/* Submit Button */
+.primary-btn-full {
+    width: 100%;
+    padding: 14px;
+    background: #4e54c8;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.primary-btn-full:hover {
+    background: #6c63ff;
+}
+
+/* Backend Button */
+.check-backend-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 18px;
+    background: #3498db;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Popup */
+.status-popup {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    display: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.status-ok {
+    background: #2ecc71;
+}
+
+.status-fail {
+    background: #e74c3c;
+}
+
+.result-box {
+    margin-top: 20px;
+    background: black;
+    padding: 20px;
+    color: #00ffcc;
+    border-radius: 10px;
+    height: 220px;
+    overflow-y: auto;
+}
+.reason-text {
+    margin: 5px 0 15px 0;
+    color: #374151;
+    font-size: 14px;
+}
+
+.green-text {
+    color: #16a34a;
+    font-weight: 600;
+}
+/* 🟦 Mapping Wrapper */
+.mapping-wrapper {
+    display: flex;
+    gap: 40px;
+    margin: 30px auto;
+    justify-content: center;
+    width: 90%;
+}
+
+/* 🧊 Card Container */
+.mapping-column {
+    flex: 1;
+    background: linear-gradient(135deg, #ffffff, #f5f7ff);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(120,120,255,0.15);
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.mapping-column:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 18px 35px rgba(0,0,0,0.25);
+}
+
+/* ⭐ Titles with icons */
+.mapping-column h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #3730a3;
+}
+
+.drag-list, .drop-list {
+    min-height: 420px;
+    padding: 15px;
+    border-radius: 16px;
+    border: 2px dashed #a5b4fc;
+    background: rgba(240, 240, 255, 0.6);
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+}
+
+/* 🟣 DRAG ITEMS */
+.draggable {
+    padding: 13px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    border-radius: 10px;
+    cursor: grab;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0px 5px 12px rgba(99,102,241,0.35);
+    transition: 0.15s ease-in-out;
+    border-left: 5px solid #312e81;
+}
+
+.draggable:active {
+    cursor: grabbing;
+    transform: scale(0.96);
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.3);
+}
+
+/* 🟢 DROP BOXES */
+.drop-box {
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 2px solid #e0e7ff;
+    transition: 0.25s ease-in-out;
+    position: relative;
+}
+
+.drop-box strong {
+    font-size: 14px;
+    color: #1e3a8a;
+}
+
+/* When dragging over */
+.drop-box.highlight {
+    border-color: #6366f1;
+    background: #eef2ff;
+    transform: scale(1.03);
+    box-shadow: 0px 6px 15px rgba(99,102,241,0.3);
+}
+
+/* Mapped text */
+.mapped-value {
+    margin-top: 6px;
+    padding: 5px 10px;
+    background: #dbeafe;
+    color: #1e40af;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 13px;
+    display: inline-block;
+    box-shadow: inset 0px 0px 6px rgba(0,0,0,0.1);
+    border-left: 4px solid #1d4ed8;
+    margin-top: 10px;
+}
+
+/* BUTTON: Apply Mapping */
+.apply-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0px 8px 20px rgba(99,102,241,0.4);
+    transition: 0.25s ease-in-out;
+}
+
+.apply-btn:hover {
+    background: linear-gradient(135deg, #6d28d9, #5b21b6);
+    transform: translateY(-3px);
+    box-shadow: 0px 12px 25px rgba(93,79,241,0.55);
+}

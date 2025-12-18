@@ -1,0 +1,146 @@
+{
+  "rulesets": [
+    {
+      "name": "vehicle_info",
+      "description": "Validations related to vehicle identity and specs.",
+      "rules": [
+        {
+          "id": "vehicle_identifiers_required",
+          "description": "Require at least one of CHASSIS_NO, ENGINE_NUMBER or PLATE_NO.",
+          "condition": {
+            "not": {
+              "any": [
+                { "exists": { "field": "CHASSIS_NO" } },
+                { "exists": { "field": "ENGINE_NUMBER" } },
+                { "exists": { "field": "PLATE_NO" } }
+              ]
+            }
+          },
+          "then": [
+            { "action": "append_message", "message": "At least one of CHASSIS_NO, ENGINE_NUMBER or PLATE_NO must be provided." },
+            { "action": "set", "field": "valid", "value": false }
+          ]
+        },
+        {
+          "id": "vehicle_numeric_fields",
+          "description": "Ensure certain fields are integers if present.",
+          "condition": {
+            "any": [
+              { "exists": { "field": "REGISTRATION_YEAR" } },
+              { "exists": { "field": "MANUFACTURE_YEAR" } },
+              { "exists": { "field": "VEHICLE_AGE" } },
+              { "exists": { "field": "SEATING_CAPACITY" } }
+            ]
+          },
+           "then": [
+            {
+              "action": "validate_each",
+              "fields": [
+                "REGISTRATION_YEAR",
+                "MANUFACTURE_YEAR",
+                "VEHICLE_AGE",
+                "SEATING_CAPACITY"
+              ],
+              "validator": "is_integer",
+              "on_failure_message": "{field} must be an integer."
+            }
+          ]
+        }
+      ],
+      "result": { "default_valid": true }
+    },
+
+    {
+      "name": "policy_info",
+      "description": "Policy and claims-related validations.",
+      "rules": [
+        {
+          "id": "policy_basic_required",
+          "description": "POLICYTYPE and SUMINSURED are always required.",
+          "condition": {
+            "any": [
+              { "not": { "exists": { "field": "POLICYTYPE" } } },
+              { "not": { "exists": { "field": "SUMINSURED" } } }
+            ]
+          },
+          "then": [
+            { "action": "append_message", "message": "POLICYTYPE and SUMINSURED are required." },
+            { "action": "set", "field": "valid", "value": false }
+          ]
+        },
+        { "id": "policy_suminsured_numeric",
+          "description": "SUMINSURED must be a number when present.",
+          "condition": { "exists": { "field": "SUMINSURED" } },
+          "then": [
+            {
+              "action": "if",
+              "predicate": { "is_number": { "field": "SUMINSURED" } },
+              "then": [],
+              "else": [
+                { "action": "append_message", "message": "SUMINSURED must be a number." },
+                { "action": "set", "field": "valid", "value": false }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "claimyn_yes_requires_claim_fields",
+          "description": "If CLAIMYN is Yes then NO_OF_CLAIMS and NO_CLAIM_BONUS are required.",
+          "condition": {
+            "any": [
+              { "equals": { "field": "CLAIMYN", "value": "Yes" } },
+              { "equals": { "field": "CLAIMYN", "value": "YES" } },
+              { "equals": { "field": "CLAIMYN", "value": "Y" } },
+              { "equals": { "field": "CLAIMYN", "value": true } }
+            ]
+          },
+          "then": [
+            {
+              "condition": {
+                "any": [
+                  { "not": { "exists": { "field": "NO_OF_CLAIMS" } } },
+                  { "not": { "exists": { "field": "NO_CLAIM_BONUS" } } }
+                ]
+              },
+              "then": [  { "action": "append_message", "message": "When CLAIMYN is Yes, NO_OF_CLAIMS and NO_CLAIM_BONUS are required." },
+                { "action": "set", "field": "valid", "value": false }
+              ]
+            }
+          ]
+        }
+      ],
+      "result": { "default_valid": true }
+    },
+
+    {
+      "name": "usage_risk",
+      "description": "Validations for vehicle usage and risk indicators.",
+      "rules": [
+        {
+          "id": "commercial_requires_driver_license",
+          "description": "If ISCOMMERCIAL_YN is Yes then DRIVER_LICENSE is required.",
+          "condition": {
+            "any": [
+              { "equals": { "field": "ISCOMMERCIAL_YN", "value": "Yes" } },
+              { "equals": { "field": "ISCOMMERCIAL_YN", "value": "YES" } },
+              { "equals": { "field": "ISCOMMERCIAL_YN", "value": "Y" } },
+              { "equals": { "field": "ISCOMMERCIAL_YN", "value": true } }
+            ]
+          },
+          "then": [
+            {
+              "condition": { "not": { "exists": { "field": "DRIVER_LICENSE" } } },
+              "then": [
+                { "action": "append_message", "message": "DRIVER_LICENSE is required when ISCOMMERCIAL_YN is Yes." },
+                { "action": "set", "field": "valid", "value": false }
+              ]
+            }
+          ]
+        }
+      ],
+   "result": { "default_valid": true }
+    }
+  ]
+}
+
+

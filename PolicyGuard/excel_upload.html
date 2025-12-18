@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Upload</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>
+</head>
+<body>
+
+<button class="check-backend-btn" onclick="checkBackendStatus()">Check Backend</button>
+<div id="statusPopup" class="status-popup"></div>
+
+<div class="form-page">
+
+    <h1 class="page-title">Excel Upload Validation</h1>
+<div id="mappingContainer" style="display:none; margin-top:25px;">
+    
+    <h2 style="text-align:center; font-size:26px; color:#1e3a8a; font-weight:800;">
+        ⚡ Drag & Drop Field Mapping
+    </h2>
+
+    <div class="mapping-wrapper">
+
+        <!-- Excel Columns (LEFT) -->
+        <div class="mapping-column">
+            <h3>📄 Excel Columns</h3>
+            <div id="excelFields" class="drag-list"></div>
+        </div>
+
+        <!-- Required Fields (RIGHT) -->
+        <div class="mapping-column">
+            <h3>🎯 Required Fields</h3>
+            <div id="requiredFields" class="drop-list"></div>
+        </div>
+
+    </div>
+
+    <button onclick="applyDragDropMapping()" class="apply-btn">
+        🚀 Apply Mapping
+    </button>
+</div>
+
+    <div class="card-form">
+        <input type="file" id="excelFile" accept=".xlsx">
+        <!-- MANUAL MAPPING UI (initially hidden) -->
+<div id="mappingContainer" style="display:none; margin-top:25px;">
+    <h3>🗂 Map Excel Columns</h3>
+
+    <div id="mappingTable"></div>
+
+    <button onclick="applyManualMapping()" 
+            class="primary-btn-full" 
+            style="margin-top:20px;">
+        Apply Mapping
+    </button>
+</div>
+
+        <button onclick="uploadExcel()" class="primary-btn-full">Validate Excel</button>
+    </div>
+
+    <pre id="excelResult" class="result-box"></pre>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+</body>
+</html>
