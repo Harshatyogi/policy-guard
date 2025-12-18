@@ -44,7 +44,6 @@ FastAPI Backend
 └── Validation Response
         ↓
 Frontend Result Dashboard
-
 📂 Project Structure
 project-root/
 │
